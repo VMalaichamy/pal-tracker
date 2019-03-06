@@ -1,0 +1,33 @@
+git add .
+git commit -m "TimeEntryAPI Test"
+git push -u origin master --tags
+git remote
+git remote remove origin
+
+git remote add origin https://github.com/VMalaichamy/pal-tracker.git
+
+
+pal_user@paramore:~$ cd ~/workspace/pal-tracker/
+pal_user@paramore:~/workspace/pal-tracker$ git remote
+origin
+pal_user@paramore:~/workspace/pal-tracker$ git remote remove origin
+pal_user@paramore:~/workspace/pal-tracker$ git remote
+pal_user@paramore:~/workspace/pal-tracker$ git remote add origin https://github.com/VMalaichamy/pal-tracker.git
+pal_user@paramore:~/workspace/pal-tracker$ git push -u origin master
+Username for 'https://github.com': vmalaichamy
+Password for 'https://vmalaichamy@github.com':
+Counting objects: 107, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (67/67), done.
+Writing objects: 100% (107/107), 324.78 KiB | 1.80 MiB/s, done.
+Total 107 (delta 20), reused 22 (delta 0)
+remote: Resolving deltas: 100% (20/20), done.
+To https://github.com/VMalaichamy/pal-tracker.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+
+cf unmap-route pal-tracker apps.evans.pal.pivotal.io --hostname pal-tracker-sachin-vetri
+cf map-route pal-tracker apps.evans.pal.pivotal.io --hostname pal-tracker-sachin-vetri
+cf create-space review
+cf app pal-tracker
